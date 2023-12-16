@@ -1,0 +1,7 @@
+--- # a sample command
+- hosts: all
+  become: true
+
+  tasks:
+    - name: create a file
+      file: path=/moni/redmi state=file

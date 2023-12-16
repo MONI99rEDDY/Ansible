@@ -1,0 +1,11 @@
+--- # downloading multiple softwares
+- hosts: all
+  become: true
+  user: moni
+  connection : ssh
+
+  tasks:
+    - name: install softwares
+      yum:
+        name: ['git','java','mysql','tree','docker','which','wget','httpd','java']
+        state: present

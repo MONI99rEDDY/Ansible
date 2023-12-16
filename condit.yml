@@ -1,0 +1,39 @@
+--- # conditionals
+- hosts: moniansible
+  become: true
+
+
+  tasks:
+    - name: install httpd
+      yum:
+        name: httpd
+        state: present
+      when: ansible_os_family == "RedHat"
+    
+    - name: install apache2
+      apt: 
+        name: apache2
+        state: present
+      when: ansible_os_family == "Debian"
+
+
+    - name: start httpd service
+      service:
+        name: httpd
+        state: started
+      when: ansible_os_family == "RedHat"
+
+
+    - name: start apache service
+      service: 
+        name: apache2
+        state: started
+      when: ansible_os_family == "Debian"
+
+
+    - name: copy index.html
+      copy:
+        src: /home/moni/index.html
+        dest: /var/www/html
+        owner: rajiv
+        mode: 0777

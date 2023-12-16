@@ -1,0 +1,16 @@
+--- # downloading multiple softwares
+- hosts: all
+  become: true
+  user: moni
+  connection : ssh
+
+  tasks:
+    - name: install softwares
+      yum: name='{{item}}' state=present
+      with_items:
+        - httpd
+        - git
+        - mysql
+        - tree
+        - java
+        - docker

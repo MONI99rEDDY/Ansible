@@ -1,0 +1,12 @@
+--- #user exp file
+- hosts: all
+  become: true
+  connection: ssh
+
+
+
+  vars_files:
+     - userexp.yml
+  tasks:
+     - name: create user {{user}}
+       user: name="{{user2}}"

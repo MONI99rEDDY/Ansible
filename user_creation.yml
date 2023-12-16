@@ -1,0 +1,13 @@
+--- #creating user through playbooks
+- hosts: all
+  become: true
+  connection: ssh
+  user: moni
+
+
+
+  tasks:
+    - name: create user rajiv 
+      user:
+        name: rajiv
+        state: present

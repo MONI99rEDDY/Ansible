@@ -1,0 +1,13 @@
+--- #create file using linux commands
+- hosts: all
+  become: true
+  connection: ssh
+  user: moni
+
+  tasks:
+    - name: create a link
+      file:
+        path: /home/moni/pikchu
+        src: /home/moni/pikachu
+        state: hard
+

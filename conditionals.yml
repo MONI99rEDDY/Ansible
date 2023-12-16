@@ -1,0 +1,13 @@
+--- # conditionals
+- hosts: moniansible
+  become: true
+
+
+  tasks:
+    - name: install httpd
+      command: yum install httpd -y
+      when: ansible_os_family == "RedHat"
+    
+    - name: install apache2
+      command: apt-get install apache2 -y
+      when: ansible_os_family == "Debian"

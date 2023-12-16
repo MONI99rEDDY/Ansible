@@ -1,0 +1,11 @@
+--- # copy file from server to host
+- hosts: all
+  become: true
+  connection: ssh
+
+  tasks:
+    - name: copy file
+      copy:
+        src: /home/moni/doraemon
+        dest: /home/moni
+        owner: moni

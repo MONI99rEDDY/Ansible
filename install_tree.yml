@@ -1,0 +1,9 @@
+--- #this is my first playbook
+- hosts: moniansible
+  become: true
+  tasks:
+    - name: install tree software
+      action: yum pkg=httpd state=present
+
+    - name: install mysql software
+      action: yum pkg=mysql state=present

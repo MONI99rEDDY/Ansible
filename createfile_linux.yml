@@ -1,0 +1,12 @@
+--- #create file using linux commands
+- hosts: all
+  become: true
+  connection: ssh
+  user: moni
+
+  tasks:
+    - name: create file using adhoc commands
+      file:
+        path: /home/moni/lifile
+        state: file
+

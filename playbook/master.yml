@@ -1,0 +1,8 @@
+--- #target section for master.yml
+- hosts: all
+  become: true
+
+
+  roles:
+
+    - testrole

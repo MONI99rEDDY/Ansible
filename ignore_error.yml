@@ -1,0 +1,24 @@
+--- #we learn how to ignore errors and continue
+- hosts: moniansible
+  name: Ignore erros
+  become: true
+  user: moni
+  connection: ssh
+
+  tasks:
+    - name: install tree
+      yum:
+        name: tree
+        state: present
+    
+
+    - name: install httpd
+      yum:
+        name: https
+        state: latest
+      ignore_errors: yes
+
+    - name: start service
+      yum:
+        name: java
+        state: latest

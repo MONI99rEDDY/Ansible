@@ -1,0 +1,16 @@
+--- #delete file and folder
+- hosts: all
+  become: yes
+  user: moni
+
+  tasks:
+    - name: delete file
+      file:
+        path: /home/moni/sinchan
+        state: absent
+
+
+    - name: delete folder
+      file:
+        path: /home/moni/momo
+        state: absent

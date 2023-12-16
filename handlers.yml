@@ -1,0 +1,15 @@
+--- #handlers section
+- hosts: moniansible
+  user: moni
+  become: true
+
+  tasks:
+    - name: install httpd
+      yum:
+        name: httpd
+        state: present
+
+
+          # handlers:
+    - name: start httpd
+      action: service name=httpd state=started

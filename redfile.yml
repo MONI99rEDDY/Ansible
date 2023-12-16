@@ -1,0 +1,14 @@
+--- # files creation using touch and file state
+- hosts: all
+  become: true
+  
+
+  tasks:
+    - name: create file using playbook
+      file: path=/tmp/tom state=file
+
+    - name: create folder using playbook
+      file: path=/tmp/bot state=directory
+
+    - name: copy file from moni to /tmp
+      copy: src=./Adani dest=/tmp

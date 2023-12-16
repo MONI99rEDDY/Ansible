@@ -1,0 +1,11 @@
+--- #tree software
+- hosts: all
+  become: yes
+  connection: ssh
+
+
+  tasks:
+    - name: remove tree software
+      yum:
+        name: ['tree','git','httpd','docker','java','mysql']
+        state: absent
